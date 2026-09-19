@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy policy — Just the Carbs</title>
+<!--
+  Static, self-contained, no external requests. Suitable for GitHub Pages or any static host.
+  The Play listing requires this to be publicly reachable at a stable URL (§48).
+-->
+<style>
+  :root {
+    --ink: #14161A; --muted: #5C6470; --paper: #FBFAF8; --rule: #E4E2DE; --accent: #0B6E5F;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --ink: #ECEEF1; --muted: #99A2AE; --paper: #0E1013; --rule: #272C33; --accent: #4ECDB4; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0 auto; padding: 2.5rem 1.25rem 5rem; max-width: 44rem;
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink); background: var(--paper);
+  }
+  h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 .35rem; letter-spacing: -.02em; }
+  h2 { font-size: 1.2rem; margin: 2.5rem 0 .6rem; letter-spacing: -.01em; }
+  .meta { color: var(--muted); font-size: .92rem; margin-bottom: 2rem; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .95rem; display: block; overflow-x: auto; }
+  th, td { text-align: left; padding: .55rem .6rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th { font-weight: 600; }
+  code { background: color-mix(in srgb, var(--rule) 55%, transparent); padding: .1rem .3rem; border-radius: 4px; font-size: .9em; }
+  .callout { border-left: 3px solid var(--accent); padding: .1rem 0 .1rem 1rem; margin: 1.5rem 0; color: var(--ink); }
+  footer { margin-top: 3.5rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); color: var(--muted); font-size: .88rem; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<h1>Privacy policy — Just the Carbs</h1>
+<p class="meta">Last updated: 17 September 2026 · Contact: albinogorillassupport@gmail.com</p>
+
+<div class="callout">
+  <strong>In one paragraph.</strong> Just the Carbs has no account, no advertising, and no
+  developer-configured analytics service. Your products, portions, favourites and verified values
+  stay on your device. It is
+  <em>not</em> true that no data leaves your device: when you scan a barcode the app has never seen,
+  it sends that barcode to Open Food Facts to look up the product, and &mdash; when that product has
+  a photo &mdash; requests the photo too. If you use <strong>Search by name</strong>, the words you
+  type are also sent to Open Food Facts, because that is how the search works. Those three requests
+  are the only ones Just the Carbs itself makes.
+</div>
+
+<h2>What stays on your device</h2>
+<p>Stored in an app-private database that no other app can read:</p>
+<ul>
+  <li>Barcodes and product names you have scanned or entered</li>
+  <li>Carbohydrate values, measurement basis, package sizes</li>
+  <li>Your verified values, and the online value they replaced</li>
+  <li>The last portion you used per product, and when you last used it</li>
+  <li>Countable portion units (e.g. &ldquo;1 slice = 36&nbsp;g&rdquo;), and whether you have checked
+      them against the package</li>
+  <li>Portions you have used more than once for a product, so they can be offered as shortcuts.
+      These are kept per product; the app has no way to assemble them into a picture of what you eat
+      overall</li>
+  <li>The items in your <strong>current meal</strong>, if you use that feature. There is only ever
+      one meal, it has no name and no date, and it stays until you clear it. The app cannot store a
+      <em>past</em> meal, so it holds no record of meals you have eaten</li>
+  <li>Favourites, and your settings</li>
+</ul>
+<p>There is no login, no cloud profile and no synchronisation. Deleting the app deletes all of it.</p>
+
+<h2>What leaves your device</h2>
+<p>
+  <strong>Three things: a barcode lookup, a product photo, and &mdash; only if you use it &mdash; a
+  search you typed.</strong>
+</p>
+<table>
+  <tr><th>Recipient</th><td>Open Food Facts, for product data (<code>world.openfoodfacts.org</code>), search (<code>search.openfoodfacts.org</code>, or <code>world.openfoodfacts.org</code> if that service does not answer) and product photos (<code>images.openfoodfacts.org</code> or <code>static.openfoodfacts.org</code>)</td></tr>
+  <tr><th>When</th><td>Product data: only when you scan or enter a barcode not already saved on your device. Photos: only when that lookup returns a product that has a photo, and only from Open Food Facts&rsquo; own image host &mdash; the app checks this and will not load an image from any other address. Search text: while you search by name &mdash; once you have typed at least three characters and paused for about a third of a second, or when you press the search action. Fewer than three characters are never sent</td></tr>
+  <tr><th>What is sent</th><td>The barcode number and a User-Agent identifying the app and version (product lookup); a standard image request with no additional data attached (photo); the search words, plus the list of languages whose product names should be searched (search). That list starts with Turkish when your phone&rsquo;s language is Turkish, so it can reveal that setting. Your phone&rsquo;s region is used only on the device, to order the results, and is not sent</td></tr>
+  <tr><th>What Just the Carbs does not attach</th><td>An account/user ID, advertising ID, your portions, results, history, or verified values. The recipient still receives normal network metadata such as IP address</td></tr>
+  <tr><th>Transport</th><td>HTTPS only; cleartext traffic is disabled at the platform level</td></tr>
+</table>
+<p>
+  <strong>About the search text specifically.</strong> Unlike a barcode, this is text you typed, so
+  it deserves naming rather than folding into &ldquo;product lookups&rdquo;. It is sent while you
+  search &mdash; after you pause typing, not on every keystroke &mdash; with no app-supplied user
+  identifier, and Just the Carbs does not store it on your device or on a Just the Carbs server
+  &mdash; the app keeps no search history and has no server. Open Food Facts&rsquo; own retention of
+  search requests was not established by a primary source in the 14 August 2026 review. If you do
+  not use Search by name, nothing of this kind is sent by Just the Carbs.
+</p>
+<p>
+  Open Food Facts is an independent organisation and will receive your IP address as an unavoidable
+  part of any internet request; their handling of that is governed by their own privacy policy. A
+  cached product &mdash; and an already-loaded photo &mdash; is served with no network request at all.
+</p>
+
+<h2>Camera</h2>
+<p>The camera is used to read barcodes and nutrition labels.</p>
+<ul>
+  <li>Processing is <strong>on-device</strong>. Live camera frames are processed in memory and discarded immediately.</li>
+  <li>When you explicitly capture a nutrition label, a temporary image is stored in the app&rsquo;s private cache solely for on-device OCR and deleted immediately after processing. Images are not uploaded or retained.</li>
+  <li>No storage or photo-library permission is requested, so the app cannot see your gallery, and the temporary capture above is never written anywhere a gallery or another app could see it.</li>
+  <li>Access is requested when you first open the scanner, not at launch. You may decline — manual entry always remains available.</li>
+</ul>
+
+<h2>What Just the Carbs does not contain</h2>
+<p>
+  No advertising SDK. No advertising ID. No developer-configured analytics or crash-reporting
+  service. No social login. No Health Connect. No Bluetooth. No location permission or location
+  feature. Just the Carbs does not sell data or share it for advertising. ML Kit&rsquo;s SDK metrics are
+  described separately below.
+</p>
+
+<h2>One thing we want to be precise about</h2>
+<p>
+  Just the Carbs uses Google ML Kit for barcode and label recognition. Google states that camera input
+  and recognition results are processed on-device and are not sent to Google. Google also states
+  that the SDK collects device and app information, per-installation identifiers, performance
+  metrics, API configuration, feature events and errors for diagnostics and usage analytics. It
+  says this data is encrypted in transit and not transferred to third parties. See Google&rsquo;s
+  <a href="https://developers.google.com/ml-kit/android-data-disclosure">ML Kit disclosure</a> and
+  <a href="https://developers.google.com/ml-kit/terms">Terms &amp; Privacy</a>, checked
+  14 August 2026.
+</p>
+<p>
+  The SDK&rsquo;s <code>com.google.android.datatransport</code> component cannot be removed without
+  breaking barcode scanning (verified in an emulator experiment) and adds the
+  <code>ACCESS_NETWORK_STATE</code> permission. Just the Carbs does not control Google&rsquo;s retention of
+  those metrics.
+</p>
+
+<h2>Backup</h2>
+<p>
+  Android backup is disabled. Your food history is never copied to your Google account. The
+  trade-off is that saved products do not transfer to a new phone.
+</p>
+
+<h2>Your control</h2>
+<table>
+  <tr><th>You want to</th><th>Do this</th></tr>
+  <tr><td>Remove usage history, keep verified products</td><td>Settings → Clear recent history</td></tr>
+  <tr><td>Delete every saved product and everything derived from it</td><td>Settings → Clear saved products</td></tr>
+  <tr><td>Remove all data permanently</td><td>Uninstall the app</td></tr>
+  <tr><td>Stop all network requests</td><td>Use the app offline; saved products keep working</td></tr>
+</table>
+<p>Precisely what each of those two does:</p>
+<ul>
+  <li>
+    <strong>Clear recent history</strong> forgets <em>that you used</em> anything. For every
+    product — favourites included — it clears the last-used time, the last portion, the remembered
+    portion mode, the remembered countable unit and the remembered count, and it deletes every
+    usual-portion record. Your products, their carbohydrate values, your verifications and your
+    favourites all stay.
+  </li>
+  <li>
+    <strong>Clear saved products</strong> deletes every saved product, every countable portion unit
+    and every usual-portion record. It does <strong>not</strong> change your app preferences (theme,
+    result style, haptics) or discard the meal you are currently assembling — neither is saved
+    product data, and this row previously said "delete everything the app has stored", which
+    overstated it.
+  </li>
+</ul>
+<p>There is no account to delete, because there is no account.</p>
+
+<h2>Children</h2>
+<p>
+  Just the Carbs is not directed at children. It has no child-oriented design, account, advertising, or
+  public user content. The same Open Food Facts requests and ML Kit collection described above
+  apply regardless of a user&rsquo;s age; no separate claim of zero collection is made for children.
+</p>
+
+<h2>Changes</h2>
+<p>
+  Material changes will be reflected here with an updated date, published alongside the app release
+  that introduces them.
+</p>
+
+<h2>Contact</h2>
+<p><a href="mailto:albinogorillassupport@gmail.com">albinogorillassupport@gmail.com</a></p>
+
+<footer>
+  Product data is provided by Open Food Facts (<a href="https://openfoodfacts.org">openfoodfacts.org</a>)
+  and used under the Open Database License (ODbL); individual records are under the Database Contents
+  License (DbCL). Product photos are provided by Open Food Facts under the Creative Commons
+  Attribution-ShareAlike 3.0 licence (CC BY-SA 3.0); a photo may also show packaging artwork owned by
+  its manufacturer.
+  Just the Carbs is not affiliated with, endorsed by, or connected to any medical device manufacturer.
+</footer>
+
+</body>
+</html>
