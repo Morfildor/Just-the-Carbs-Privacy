@@ -36,7 +36,7 @@
 <body>
 
 <h1>Privacy policy — Just the Carbs</h1>
-<p class="meta">Last updated: 17 September 2026 · Contact: albinogorillassupport@gmail.com</p>
+<p class="meta">Last updated: 30 September 2026 · Contact: albinogorillassupport@gmail.com</p>
 
 <div class="callout">
   <strong>In one paragraph.</strong> Just the Carbs has no account, no advertising, and no
@@ -45,15 +45,18 @@
   <em>not</em> true that no data leaves your device: when you scan a barcode the app has never seen,
   it sends that barcode to Open Food Facts to look up the product, and &mdash; when that product has
   a photo &mdash; requests the photo too. If you use <strong>Search by name</strong>, the words you
-  type are also sent to Open Food Facts, because that is how the search works. Those three requests
-  are the only ones Just the Carbs itself makes.
+  type are also sent to Open Food Facts, because that is how the search works, and the results&rsquo;
+  photos are requested too; some of those come from Open Food Facts&rsquo; image archive, which is
+  hosted on Amazon Web Services (Amazon S3). Those three kinds of request are the only ones Just the
+  Carbs itself makes.
 </div>
 
 <h2>What stays on your device</h2>
 <p>Stored in an app-private database that no other app can read:</p>
 <ul>
   <li>Barcodes and product names you have scanned or entered</li>
-  <li>Carbohydrate values, measurement basis, package sizes</li>
+  <li>Carbohydrate values and, for Open Food Facts products, protein values; measurement basis,
+      package sizes</li>
   <li>Your verified values, and the online value they replaced</li>
   <li>The last portion you used per product, and when you last used it</li>
   <li>Countable portion units (e.g. &ldquo;1 slice = 36&nbsp;g&rdquo;), and whether you have checked
@@ -64,7 +67,22 @@
   <li>The items in your <strong>current meal</strong>, if you use that feature. There is only ever
       one meal, it has no name and no date, and it stays until you clear it. The app cannot store a
       <em>past</em> meal, so it holds no record of meals you have eaten</li>
-  <li>Favourites, and your settings</li>
+  <li>The <strong>dish</strong> you are building, if you use that feature: the ingredients you
+      added, how much of each, the value each was calculated with, and how many portions the dish
+      makes or what it weighed (as a whole, or plate by plate as you served it, with the empty
+      container you took off). There is only ever one and it has no name; when you are editing a
+      saved dish, it also notes which one. The time each ingredient was added and the time the
+      dish last changed are kept, to keep the ingredients in order and to tell a dish left since
+      yesterday from one being made now; they are never shown. The dish stays until you save it,
+      clear it, start another or remove its last ingredient, including across a restart</li>
+  <li>Dishes you chose to save: the name you gave each, what went into it, how many portions it
+      makes or what it weighed, when it was saved and when you last opened it (to put the dishes
+      you open most recently first). Nothing about a serving is kept: not how many portions you
+      had, when, or what is left</li>
+  <li>The weights of the last three pans or bowls you subtracted from a scale reading, so they
+      can be offered again. They are weights only and have no names</li>
+  <li>Favourites, and your settings (including whether Home shows your favourites or your
+      dishes)</li>
 </ul>
 <p>There is no login, no cloud profile and no synchronisation. Deleting the app deletes all of it.</p>
 
@@ -74,8 +92,8 @@
   search you typed.</strong>
 </p>
 <table>
-  <tr><th>Recipient</th><td>Open Food Facts, for product data (<code>world.openfoodfacts.org</code>), search (<code>search.openfoodfacts.org</code>, or <code>world.openfoodfacts.org</code> if that service does not answer) and product photos (<code>images.openfoodfacts.org</code> or <code>static.openfoodfacts.org</code>)</td></tr>
-  <tr><th>When</th><td>Product data: only when you scan or enter a barcode not already saved on your device. Photos: only when that lookup returns a product that has a photo, and only from Open Food Facts&rsquo; own image host &mdash; the app checks this and will not load an image from any other address. Search text: while you search by name &mdash; once you have typed at least three characters and paused for about a third of a second, or when you press the search action. Fewer than three characters are never sent</td></tr>
+  <tr><th>Recipient</th><td>Open Food Facts, for product data (<code>world.openfoodfacts.org</code>), search (<code>search.openfoodfacts.org</code>, or <code>world.openfoodfacts.org</code> if that service does not answer) and product photos (<code>images.openfoodfacts.org</code> or <code>static.openfoodfacts.org</code>; for search results, also Open Food Facts&rsquo; image archive at <code>openfoodfacts-images.s3.eu-west-3.amazonaws.com</code>, which runs on Amazon Web Services infrastructure, Amazon S3)</td></tr>
+  <tr><th>When</th><td>Product data: only when you scan or enter a barcode not already saved on your device. Photos: when that lookup returns a product that has a photo, and for each result shown while you search by name. Some search-result photos are served from Open Food Facts&rsquo; Amazon S3-hosted image archive: the app uses the archive only when it can tell the archived photo is the same, unedited picture, and otherwise &mdash; or when the archive does not have it &mdash; uses Open Food Facts&rsquo; own image host. The app checks every photo address and will not load an image from any other host. Search text: while you search by name &mdash; once you have typed at least three characters and paused for about a third of a second, or when you press the search action. Fewer than three characters are never sent</td></tr>
   <tr><th>What is sent</th><td>The barcode number and a User-Agent identifying the app and version (product lookup); a standard image request with no additional data attached (photo); the search words, plus the list of languages whose product names should be searched (search). That list starts with Turkish when your phone&rsquo;s language is Turkish, so it can reveal that setting. Your phone&rsquo;s region is used only on the device, to order the results, and is not sent</td></tr>
   <tr><th>What Just the Carbs does not attach</th><td>An account/user ID, advertising ID, your portions, results, history, or verified values. The recipient still receives normal network metadata such as IP address</td></tr>
   <tr><th>Transport</th><td>HTTPS only; cleartext traffic is disabled at the platform level</td></tr>
@@ -92,7 +110,10 @@
 <p>
   Open Food Facts is an independent organisation and will receive your IP address as an unavoidable
   part of any internet request; their handling of that is governed by their own privacy policy. A
-  cached product &mdash; and an already-loaded photo &mdash; is served with no network request at all.
+  search-result photo served from Open Food Facts&rsquo; image archive travels over Amazon Web
+  Services infrastructure, so Amazon Web Services, which operates that storage for Open Food Facts,
+  also receives that request&rsquo;s network metadata, such as your IP address. A cached product
+  &mdash; and an already-loaded photo &mdash; is served with no network request at all.
 </p>
 
 <h2>Camera</h2>
@@ -139,26 +160,30 @@
 <h2>Your control</h2>
 <table>
   <tr><th>You want to</th><th>Do this</th></tr>
-  <tr><td>Remove usage history, keep verified products</td><td>Settings → Clear recent history</td></tr>
-  <tr><td>Delete every saved product and everything derived from it</td><td>Settings → Clear saved products</td></tr>
+  <tr><td>Remove usage history, keep verified products and saved dishes</td><td>Settings → Clear recent history</td></tr>
+  <tr><td>Delete every saved product and dish and everything derived from them</td><td>Settings → Clear saved products</td></tr>
+  <tr><td>Discard the dish you are building</td><td>Open it from Home, then its menu → Clear dish (while editing a saved dish, Discard changes)</td></tr>
+  <tr><td>Delete one saved dish</td><td>Open it, then its menu → Delete dish (or press and hold its card on Home)</td></tr>
   <tr><td>Remove all data permanently</td><td>Uninstall the app</td></tr>
   <tr><td>Stop all network requests</td><td>Use the app offline; saved products keep working</td></tr>
 </table>
-<p>Precisely what each of those two does:</p>
+<p>Precisely what the two Settings actions do:</p>
 <ul>
   <li>
     <strong>Clear recent history</strong> forgets <em>that you used</em> anything. For every
     product — favourites included — it clears the last-used time, the last portion, the remembered
     portion mode, the remembered countable unit and the remembered count, and it deletes every
-    usual-portion record. Your products, their carbohydrate values, your verifications and your
-    favourites all stay.
+    usual-portion record and the pan weights remembered for dishes. Your products, your saved
+    dishes, their carbohydrate values, your verifications and your favourites all stay, and so
+    does a dish you are still building.
   </li>
   <li>
     <strong>Clear saved products</strong> deletes every saved product, every countable portion unit
-    and every usual-portion record. It does <strong>not</strong> change your app preferences (theme,
-    result style, haptics) or discard the meal you are currently assembling — neither is saved
-    product data, and this row previously said "delete everything the app has stored", which
-    overstated it.
+    and every usual-portion record. It also deletes every dish you saved, with its list of
+    ingredients, and the pan weights remembered for dishes. It does <strong>not</strong> change
+    your app preferences (theme, result style, haptics) or discard the meal you are currently
+    assembling or the dish you are still building — none of those is saved product data, and this
+    row previously said "delete everything the app has stored", which overstated it.
   </li>
 </ul>
 <p>There is no account to delete, because there is no account.</p>
